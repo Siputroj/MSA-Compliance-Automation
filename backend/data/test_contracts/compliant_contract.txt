@@ -1,0 +1,18 @@
+MASTER SERVICE AGREEMENT
+
+This Master Service Agreement ("Agreement") is dated June 22, 2026, by and between ACME Corporation ("Customer") and Alpha Services LLC ("Supplier").
+
+1. SERVICES AND FEES
+Supplier shall perform services described in Statements of Work. Customer shall pay all undisputed invoice fees. Payment terms are Net 45 days from the date of the invoice.
+
+2. TERM AND TERMINATION
+This Agreement will commence on the Effective Date and run for three (3) years. Either party may terminate this Agreement for convenience at any time without cause by providing at least forty-five (45) days prior written notice to the other party.
+
+3. LIMITATION OF LIABILITY
+EXCEPT FOR BREACHES OF CONFIDENTIALITY OR INTELLECTUAL PROPERTY INDEMNIFICATION, IN NO EVENT SHALL EITHER PARTY'S AGGREGATE LIABILITY ARISING OUT OF OR RELATED TO THIS AGREEMENT EXCEED ONE MILLION DOLLARS ($1,000,000).
+
+4. COVENANTS
+Both parties agree to cooperate in good faith. The parties agree that no covenants restricting competitive hiring or business practices are formed under this Agreement, and each party remains free to conduct business.
+
+5. GOVERNING LAW
+This Agreement and all disputes arising out of it shall be governed by, and construed in accordance with, the laws of the State of Delaware, without giving effect to any conflict of law principles. Any legal action shall be filed in the courts of Delaware.

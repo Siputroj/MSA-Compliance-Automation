@@ -1,0 +1,44 @@
+{
+  "rules": [
+    {
+      "id": "RULE-01",
+      "name": "Governing Law",
+      "cuad_category": "Governing Law",
+      "description": "The contract must be governed by the laws of Delaware or New York. International jurisdictions or other US states are prohibited.",
+      "criteria": "Extract the governing law jurisdiction. Verify if it is Delaware (DE) or New York (NY). If it is any other state or country, mark as NON_COMPLIANT.",
+      "severity": "high"
+    },
+    {
+      "id": "RULE-02",
+      "name": "Non-Compete Restriction",
+      "cuad_category": "Non-Compete",
+      "description": "The contract must not contain any non-compete clauses restricting our company's business practices, markets, or product offerings.",
+      "criteria": "Identify if there is a non-compete clause that binds our company. If any non-compete restriction exists, mark as NON_COMPLIANT. Note: Standard confidentiality covenants are compliant.",
+      "severity": "high"
+    },
+    {
+      "id": "RULE-03",
+      "name": "Liability Cap",
+      "cuad_category": "Cap On Liability",
+      "description": "The contract must contain a clear limitation of liability (liability cap). Uncapped general liability for our company is strictly prohibited.",
+      "criteria": "Identify if liability is capped. If there is a clause stating that liability is uncapped or lacks a cap (excluding standard exceptions like breach of confidentiality, IP, or willful misconduct), mark as NON_COMPLIANT.",
+      "severity": "high"
+    },
+    {
+      "id": "RULE-04",
+      "name": "Termination Notice Period",
+      "cuad_category": "Termination For Convenience",
+      "description": "If a termination for convenience clause exists, the notice period required to terminate must be at least 30 days.",
+      "criteria": "Extract the notice period for termination for convenience. If either party can terminate for convenience with a notice period less than 30 days, mark as NON_COMPLIANT/WARNING.",
+      "severity": "medium"
+    },
+    {
+      "id": "RULE-05",
+      "name": "Audit Rights",
+      "cuad_category": "Audit Rights",
+      "description": "The contract must not grant the counterparty unrestricted audit rights. Audits must be limited to once per calendar year with reasonable notice.",
+      "criteria": "Identify if the contract contains audit rights. If the audit rights are unrestricted (e.g. allow audits at any time without notice or limit), mark as NON_COMPLIANT/WARNING.",
+      "severity": "medium"
+    }
+  ]
+}

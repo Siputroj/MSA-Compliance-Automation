@@ -1,0 +1,27 @@
+# Python Bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Data and Vector database files (transient local state)
+data/db/
+data/processed/
+cuad_data/
+*.sqlite
+
+# OS and Log files
+.DS_Store
+*.log
+
+# Environment configuration
+.env
+.env.local
