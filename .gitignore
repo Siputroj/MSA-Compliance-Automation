@@ -1,0 +1,27 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.log
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Project cache and dependencies
+npm_cache/
+node_modules/
+.next/
+dist/
+build/
+
+# Local env files
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
