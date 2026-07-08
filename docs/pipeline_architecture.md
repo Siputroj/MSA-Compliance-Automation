@@ -31,8 +31,7 @@ backend/
 │   └── rules.json              # Declarative compliance rules (the exam questions)
 ├── data/
 │   ├── db/                     # Local ChromaDB vector database directory
-│   ├── processed/              # Processed test/train dataset JSONL files
-│   └── test_contracts/         # Mock MSA contracts for testing
+│   └── processed/              # Processed test/train dataset JSONL files
 ├── src/
 │   ├── __init__.py
 │   ├── chunker.py              # Text cleaning and semantic chunking (tears up the pages)

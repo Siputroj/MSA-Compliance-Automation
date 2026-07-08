@@ -62,61 +62,40 @@ def main():
                 print("Switching to DRY-RUN simulation...")
                 engine = ComplianceEngine(dry_run=True)
 
-    # Contract file paths
-    compliant_path = "data/test_contracts/compliant_contract.txt"
-    non_compliant_path = "data/test_contracts/non_compliant_contract.txt"
+    # Contract file path pointing to a real CUAD dataset contract
+    contract_path = "cuad_data/CUAD_v1/full_contract_txt/Part_I/DOMINIADVISORTRUST_02_18_2005-EX-99.(H)(2)-SPONSORSHIP AGREEMENT.txt"
+    contract_name = "DOMINIADVISORTRUST_02_18_2005-EX-99.(H)(2)-SPONSORSHIP AGREEMENT.txt"
 
-    # Verify files exist
-    for path in [compliant_path, non_compliant_path]:
-        if not os.path.exists(path):
-            print(f"[ERROR] Test contract file not found: {path}")
-            sys.exit(1)
+    # Verify file exists
+    if not os.path.exists(contract_path):
+        print(f"[ERROR] CUAD contract file not found: {contract_path}")
+        print("Please download and configure the CUAD dataset as described in the README.")
+        sys.exit(1)
 
-    # 1. Evaluate Compliant Contract
-    print("\n" + "#" * 60)
-    print("  TESTING CONTRACT: Compliant MSA (compliant_contract.txt)")
-    print("#" * 60)
+    print("\n" + "#" * 80)
+    print(f"  TESTING REAL CONTRACT: {contract_name}")
+    print("#" * 80)
     
-    with open(compliant_path, "r", encoding="utf-8") as f:
-        compliant_text = f.read()
+    with open(contract_path, "r", encoding="utf-8") as f:
+        contract_text = f.read()
 
-    compliant_report = engine.analyze_contract_text("compliant_contract.txt", compliant_text)
+    report = engine.analyze_contract_text(contract_name, contract_text)
     
     print(f"\nCompliance Summary:")
-    print(f"  - Score: {compliant_report['compliance_summary']['score']}%")
-    print(f"  - Rules Evaluated: {compliant_report['compliance_summary']['total_rules']}")
-    print(f"  - Rules Passed: {compliant_report['compliance_summary']['passed']}")
-    print(f"  - Rules Failed: {compliant_report['compliance_summary']['failed']}")
+    print(f"  - Score: {report['compliance_summary']['score']}%")
+    print(f"  - Rules Evaluated: {report['compliance_summary']['total_rules']}")
+    print(f"  - Rules Passed: {report['compliance_summary']['passed']}")
+    print(f"  - Rules Failed: {report['compliance_summary']['failed']}")
     
     print("\nDetailed Clause Evaluations:")
-    print("-" * 50)
-    for result in compliant_report["results"]:
+    print("-" * 80)
+    for result in report["results"]:
         print_result_card(result)
 
-    # 2. Evaluate Non-Compliant Contract
-    print("\n" + "#" * 60)
-    print("  TESTING CONTRACT: Non-Compliant MSA (non_compliant_contract.txt)")
-    print("#" * 60)
+    print("\n" + "=" * 80)
+    print("Compliance Test Completed Successfully on CUAD Contract!")
+    print("=" * 80)
 
-    with open(non_compliant_path, "r", encoding="utf-8") as f:
-        non_compliant_text = f.read()
-
-    non_compliant_report = engine.analyze_contract_text("non_compliant_contract.txt", non_compliant_text)
-
-    print(f"\nCompliance Summary:")
-    print(f"  - Score: {non_compliant_report['compliance_summary']['score']}%")
-    print(f"  - Rules Evaluated: {non_compliant_report['compliance_summary']['total_rules']}")
-    print(f"  - Rules Passed: {non_compliant_report['compliance_summary']['passed']}")
-    print(f"  - Rules Failed: {non_compliant_report['compliance_summary']['failed']}")
-
-    print("\nDetailed Clause Evaluations:")
-    print("-" * 50)
-    for result in non_compliant_report["results"]:
-        print_result_card(result)
-
-    print("\n" + "=" * 60)
-    print("Test Completed Successfully!")
-    print("=" * 60)
 
 if __name__ == "__main__":
     main()
